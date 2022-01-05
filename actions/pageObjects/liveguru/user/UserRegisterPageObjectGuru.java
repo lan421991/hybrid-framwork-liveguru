@@ -37,14 +37,24 @@ public class UserRegisterPageObjectGuru extends BasePage {
 		sendkeyToElement(driver, RegisterPageUI.PASSWORD_TEXTBOX, password);
 	}
 
-	public void inputConfirmPasswordTextbox(String password) {
+	public void inputConfirmPasswordTextbox(String confirmpassword) {
 		waitForElementVisible(driver, RegisterPageUI.CONFIRM_PASSWORD_TEXTBOX);
-		sendkeyToElement(driver, RegisterPageUI.CONFIRM_PASSWORD_TEXTBOX, password);	
+		sendkeyToElement(driver, RegisterPageUI.CONFIRM_PASSWORD_TEXTBOX, confirmpassword);	
 	}
 
 	public UserMyDashboardPageObjectGuru clickToRegisterLiveguruButton() {
 		waitForElementClickEnable(driver, RegisterPageUI.REGISTER_BUTTON);
 		clickToElement(driver, RegisterPageUI.REGISTER_BUTTON);		
 		return UserPageGeneratorManagerGuru.getMyDashboardPage(driver);
+	}
+	
+	public UserMyDashboardPageObjectGuru RegisterSuccess(String fisrtName, String middleName,String lastName, String email, String password, String confirmpassword) {
+		inputFisrtNameTextbox(fisrtName);
+		inputMiddleNameTextbox(middleName);
+		inputLastNameTextbox(lastName);
+		inputEmailAddressTextbox(email);
+		inputPasswordTextbox(password);
+		inputConfirmPasswordTextbox(confirmpassword);
+		return clickToRegisterLiveguruButton();
 	}
 }

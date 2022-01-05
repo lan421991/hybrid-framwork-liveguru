@@ -34,30 +34,23 @@ public class LoginLiveGuru extends BaseTest {
 	
 	@Test
 	public void TC_01_Register_success() {
-		homePage.clickToAccountLink();
-		loginPage = homePage.clickToMyAccountLink();
+		loginPage = homePage.openLoginPage(driver);
+		
 		registerPage = loginPage.clickToCreateAnAccount();
-		registerPage.inputFisrtNameTextbox(fisrtName);
-		registerPage.inputMiddleNameTextbox(middleName);
-		registerPage.inputLastNameTextbox(lastName);
-		registerPage.inputEmailAddressTextbox(email);
-		registerPage.inputPasswordTextbox(password);
-		registerPage.inputConfirmPasswordTextbox(password);
-		myDashboardPage = registerPage.clickToRegisterLiveguruButton();
+		myDashboardPage = registerPage.RegisterSuccess(fisrtName,middleName,lastName,email, password, password);
 		Assert.assertTrue(myDashboardPage.getHelloMessage().contains(fullName));
 		Assert.assertTrue(myDashboardPage.getFullNameMessage().contains(fullName));
 		Assert.assertTrue(myDashboardPage.getFullNameMessage().contains(email));
+		
 		myDashboardPage.clickToAccount();
 		homePage = myDashboardPage.clickToLogoutLink();
 	}
 	
 	@Test
 	public void TC_02_Login_success() {
-		homePage.clickToAccountLink();
-		loginPage = homePage.clickToMyAccountLink();
-		loginPage.inputEmailLiveGuruTextbox(email);
-		loginPage.inputToPasswordLiveguruTextbox(password);
-		myDashboardPage = loginPage.clickToLoginButton();
+		loginPage = homePage.openLoginPage(driver);
+
+		myDashboardPage = loginPage.LoginSucess(email,password);
 		Assert.assertTrue(myDashboardPage.getHelloMessage().contains(fullName));
 	}
 	public int genarateFakeNumber() {

@@ -33,5 +33,11 @@ public class UserLoginPageObjectGuru extends BasePage{
 		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
 		return UserPageGeneratorManagerGuru.getMyDashboardPage(driver);
 	}
+	
+	public UserMyDashboardPageObjectGuru LoginSucess(String email, String password) {
+		inputEmailLiveGuruTextbox(email);
+		inputToPasswordLiveguruTextbox(password);
+		return clickToLoginButton();
+	}
 
 }
