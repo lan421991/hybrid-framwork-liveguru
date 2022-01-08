@@ -3,6 +3,7 @@ package pageObjects.liveguru.user;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
+import commons.PageGeneratorManager;
 import pageUIs.liveguru.RegisterPageUI;
 
 public class UserRegisterPageObjectGuru extends BasePage {
@@ -45,7 +46,7 @@ public class UserRegisterPageObjectGuru extends BasePage {
 	public UserMyDashboardPageObjectGuru clickToRegisterLiveguruButton() {
 		waitForElementClickEnable(driver, RegisterPageUI.REGISTER_BUTTON);
 		clickToElement(driver, RegisterPageUI.REGISTER_BUTTON);		
-		return UserPageGeneratorManagerGuru.getMyDashboardPage(driver);
+		return PageGeneratorManager.getMyDashboardPage(driver);
 	}
 	
 	public UserMyDashboardPageObjectGuru RegisterSuccess(String fisrtName, String middleName,String lastName, String email, String password, String confirmpassword) {

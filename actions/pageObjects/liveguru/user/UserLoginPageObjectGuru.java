@@ -3,6 +3,7 @@ package pageObjects.liveguru.user;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
+import commons.PageGeneratorManager;
 import pageUIs.liveguru.LoginPageUI;
 
 public class UserLoginPageObjectGuru extends BasePage{
@@ -15,7 +16,7 @@ public class UserLoginPageObjectGuru extends BasePage{
 	public UserRegisterPageObjectGuru clickToCreateAnAccount() {
 		waitForElementClickEnable(driver, LoginPageUI.CREATE_AN_ACCOUNT_LINK);
 		clickToElement(driver, LoginPageUI.CREATE_AN_ACCOUNT_LINK);
-		return UserPageGeneratorManagerGuru.getRegisterPage(driver);
+		return PageGeneratorManager.getRegisterPage(driver);
 	}
 
 	public void inputEmailLiveGuruTextbox(String email) {
@@ -31,7 +32,7 @@ public class UserLoginPageObjectGuru extends BasePage{
 	public UserMyDashboardPageObjectGuru clickToLoginButton() {
 		waitForElementClickEnable(driver, LoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
-		return UserPageGeneratorManagerGuru.getMyDashboardPage(driver);
+		return PageGeneratorManager.getMyDashboardPage(driver);
 	}
 	
 	public UserMyDashboardPageObjectGuru LoginSucess(String email, String password) {

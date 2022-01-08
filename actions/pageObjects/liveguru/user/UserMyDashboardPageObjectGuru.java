@@ -3,6 +3,7 @@ package pageObjects.liveguru.user;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
+import commons.PageGeneratorManager;
 import pageUIs.liveguru.MyDasgboardUI;
 
 public class UserMyDashboardPageObjectGuru extends BasePage{
@@ -30,7 +31,7 @@ public class UserMyDashboardPageObjectGuru extends BasePage{
 	public UserHomePageObjectGuru clickToLogoutLink() {
 		waitForElementClickEnable(driver, MyDasgboardUI.LOGOUT_LINK);
 		clickToElement(driver, MyDasgboardUI.LOGOUT_LINK);
-		return UserPageGeneratorManagerGuru.getHomePage(driver);
+		return PageGeneratorManager.getHomePage(driver);
 	}
 	
 //	String contactInformation = driver.findElement(By.xpath("//h3[text()='Contact Information']/parent::div//following-sibling::div[@class='box-content']/p")).getText();

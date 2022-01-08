@@ -1,8 +1,13 @@
-package pageObjects.liveguru.user;
+package commons;
 
 import org.openqa.selenium.WebDriver;
 
-public class UserPageGeneratorManagerGuru {
+import pageObjects.liveguru.user.UserHomePageObjectGuru;
+import pageObjects.liveguru.user.UserLoginPageObjectGuru;
+import pageObjects.liveguru.user.UserMyDashboardPageObjectGuru;
+import pageObjects.liveguru.user.UserRegisterPageObjectGuru;
+
+public class PageGeneratorManager {
 	private WebDriver driver;
 	
 	public static UserHomePageObjectGuru getHomePage(WebDriver driver) {
